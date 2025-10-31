@@ -1,93 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNIDA — You Need A Developer/Designer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>UNIDA — Developer / Designer</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header class="navbar">
-    <h1>UNIDA</h1>
+    <div class="brand">UNIDA</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Developer</a>
-      <a href="#">Designer</a>
-      <a href="#">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#developer">Developer</a>
+      <a href="#designer">Designer</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>U-Need-A</h2>
-      <div class="toggle-text">
-        <span id="toggle-word">Developer</span>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <h1>U-Need-A <span id="role">Developer</span></h1>
+        <p class="lead">We build high-conversion landing pages & full-stack websites for local businesses — fast, clean, and conversion-focused.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#developer">Explore Developer</a>
+          <a class="btn ghost" href="#contact">Get a Quote</a>
+        </div>
       </div>
-      <p>We build high-conversion landing pages and full-stack websites with AI precision.</p>
-      <button id="toggle-btn">Switch to Designer</button>
-    </div>
-  </section>
-  <!-- ABOUT SECTION -->
-<section id="about" class="about">
-  <div class="container">
-    <h2>About Unida</h2>
-    <p>Unida is a design-driven digital studio focused on building intuitive, human-centered interfaces. We combine minimalism, precision, and emotion to craft experiences that speak through simplicity.</p>
-  </div>
-</section>
+    </section>
 
-<!-- SERVICES SECTION -->
-<section id="services" class="services">
-  <div class="container">
-    <h2>What We Do</h2>
-    <div class="service-grid">
-      <div class="service">
-        <h3>UI/UX Design</h3>
-        <p>We design clean, meaningful interfaces that make users stay and connect.</p>
+    <section id="developer" class="section">
+      <div class="container">
+        <h2>Developer — Real Estate Portfolio</h2>
+        <p class="muted">Sample projects you can buy and get launched quickly.</p>
+        <div class="portfolio-grid">
+          <article class="card">
+            <a href="real-estate/index.html">
+              <img src="assets/thumb1.jpg" alt="Astral Heights thumbnail"/>
+              <h3>Astral Heights — Luxury Apartments (Bangalore)</h3>
+              <p class="meta">Landing page • Lead capture • WhatsApp CTA</p>
+            </a>
+            <div class="card-actions">
+              <a class="btn small" href="real-estate/index.html">View Demo</a>
+              <a class="btn small outline" href="#contact">Request Quote</a>
+            </div>
+          </article>
+
+          <!-- You can duplicate this card later for other demos -->
+        </div>
+
+        <div class="note">
+          <strong>Packages:</strong> Starter ₹15,000 • Pro ₹25,000 • Premium ₹40,000+
+        </div>
       </div>
-      <div class="service">
-        <h3>Brand Identity</h3>
-        <p>Logos, color systems, and design language that represent your brand story.</p>
+    </section>
+
+    <section id="designer" class="section muted-section">
+      <div class="container">
+        <h2>Designer — Coming Soon</h2>
+        <p>This section is currently locked — visual design services launching soon. Want early access? Contact us.</p>
+        <button class="btn primary" onclick="location.hash='#contact'">Request Early Access</button>
       </div>
-      <div class="service">
-        <h3>Web Development</h3>
-        <p>Fast, responsive, SEO-friendly websites built for performance and clarity.</p>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2>Contact UNIDA</h2>
+        <p>Fastest: WhatsApp — <a href="https://wa.me/917000000000" target="_blank" rel="noopener">+91 70000 00000</a></p>
+        <p>Email: <a href="mailto:reply.uneeda@protonmail.com">reply.uneeda@protonmail.com</a></p>
+        <p><em>Prefer Fiverr/Upwork? We respond within 2 business hours.</em></p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
-<!-- PORTFOLIO SECTION -->
-<section id="portfolio" class="portfolio">
-  <div class="container">
-    <h2>Our Work</h2>
-    <div class="portfolio-grid">
-      <div class="card"><img src="assets/project1.jpg" alt="Project 1"><p>Minimalist Dashboard</p></div>
-      <div class="card"><img src="assets/project2.jpg" alt="Project 2"><p>Brand Identity Kit</p></div>
-      <div class="card"><img src="assets/project3.jpg" alt="Project 3"><p>Responsive Landing Page</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Let’s Collaborate</h2>
-    <p>Have a project in mind? Reach out and let's build something meaningful.</p>
-    <a href="mailto:contact@unida.design" class="btn">Contact Us</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Unida. All rights reserved.</p>
-</footer>
-
-
-  <footer>
-    <p>© 2025 UNIDA. All rights reserved.</p>
-  </footer>
-  <footer>
-    <p style="color:red; text-align:center;">HTML connected successfully!</p>
+  <footer class="site-footer">
+    <div class="container">© 2025 UNIDA — Built by UNIDA Studio</div>
   </footer>
 
   <script src="script.js"></script>
