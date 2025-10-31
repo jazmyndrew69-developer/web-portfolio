@@ -1,48 +1,29 @@
-// role toggle auto + button + glow effect
-const roleSpan = document.getElementById('role');
+const toggleWord = document.getElementById('toggle-word');
 const toggleBtn = document.getElementById('toggle-btn');
 
-let roles = ['Developer', 'Designer'];
+let current = 'Developer';
+const roles = ['Developer', 'Designer'];
 let idx = 0;
 
-function glowOnce() {
-  roleSpan.classList.add('glow');
-  setTimeout(()=> roleSpan.classList.remove('glow'), 1100);
+function glowToggle() {
+  toggleWord.classList.add('glow');
+  setTimeout(() => toggleWord.classList.remove('glow'), 1200);
 }
 
-// auto toggle every 2.5s
-setInterval(()=>{
+function updateRole() {
   idx = (idx + 1) % roles.length;
-  roleSpan.textContent = roles[idx];
-  glowOnce();
-}, 2500);
+  current = roles[idx];
+  toggleWord.textContent = current;
+  glowToggle();
+  toggleBtn.textContent = current === 'Developer' ? 'Switch to Designer' : 'Designer — Coming Soon';
+}
 
-// button toggles (Designer is locked – show coming soon overlay)
-toggleBtn && toggleBtn.addEventListener('click', (e) => {
-  const current = roleSpan.textContent.trim();
-  if (current === 'Developer') {
-    // show designer locked message
-    alert('Designer section is coming soon. Want early access? Contact us.');
-    // keep role as Developer but flash glow
-    glowOnce();
-  } else {
-    // fallback
-    roleSpan.textContent = 'Developer';
-    glowOnce();
-  }
+toggleBtn.addEventListener('click', () => {
+  if (current === 'Designer') return; // locked
+  updateRole();
 });
 
-// smooth scroll for anchors
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', (e)=>{
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
-  });
-});
-
-// mobile menu toggle (simple)
-const mobileToggle = document.querySelector('.mobile-toggle');
-const nav = document.querySelector('.main-nav');
-mobileToggle && mobileToggle.addEventListener('click', ()=>{
-  nav.classList.toggle('open');
-});
+// Auto toggle every 3s for animation
+setInterval(() => {
+  updateRole();
+}, 4000);
