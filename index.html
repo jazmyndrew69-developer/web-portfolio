@@ -1,35 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNIDA — You Need A Developer/Designer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UNIDA — Developer / Designer (Coming soon)</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:," />
 </head>
 <body>
-  <header class="navbar">
-    <h1>UNIDA</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+  <header class="site-header">
+    <div class="brand">UNIDA</div>
+    <nav class="main-nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Demo Websites</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <button class="mobile-toggle" aria-label="Open menu">☰</button>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>U-Need-A</h2>
-      <div class="toggle-text">
-        <span id="toggle-word">Developer</span>
-      </div>
-      <p>We build high-conversion, AI-powered websites that merge design with precision.</p>
-      <button id="toggle-btn">Switch to Designer</button>
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <h1 class="big-title">U-NEED-A <span class="role-wrap"><span id="role" class="role">Developer</span></span></h1>
 
-  <footer>
-    <p>© 2025 UNIDA. All rights reserved.</p>
+        <div class="role-controls">
+          <button id="role-toggle" class="pill">Switch to Designer</button>
+          <div class="locked-note" id="locked-note" aria-hidden="true">Designer — Coming Soon</div>
+        </div>
+
+        <p class="tagline">We build high-conversion, AI-assisted landing pages & full-stack websites — fast, secure, and beautiful.</p>
+
+        <div class="hero-ctas">
+          <a class="btn primary" href="#projects">Explore Demos</a>
+          <a class="btn ghost" href="#contact">Get a Quote</a>
+        </div>
+      </div>
+
+      <!-- background neon accents -->
+      <div class="bg-accents" aria-hidden="true">
+        <span class="line l1"></span>
+        <span class="line l2"></span>
+        <span class="line l3"></span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container split">
+        <div class="box visual">
+          <div class="photo-clip">
+            <img src="assets/demo2-thumb.jpg" alt="Studio visual" />
+            <div class="neon-border"></div>
+          </div>
+        </div>
+        <div class="box content">
+          <h2>About UNIDA</h2>
+          <p class="lead">UNIDA is a boutique creative-technical studio focused on high-performing web experiences. We combine clear design, rigorous front-end engineering and fast delivery for real estate, local businesses, coaches and creators.</p>
+
+          <div class="two-cols">
+            <div class="info-card">
+              <h4>Our approach</h4>
+              <p class="muted">Discovery → Prototype → Build → Launch. We measure impact and optimize for conversions.</p>
+            </div>
+            <div class="info-card">
+              <h4>What we deliver</h4>
+              <p class="muted">Landing pages, multi-page websites, lead capture flows, WhatsApp integration, and UI/UX systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section services">
+      <div class="container">
+        <h2>Services & Packages</h2>
+
+        <div class="services-grid">
+          <div class="service neon-card">
+            <h3>UI / UX Design</h3>
+            <p class="muted">Design systems, prototypes, user journeys and visual polish.</p>
+          </div>
+          <div class="service neon-card">
+            <h3>Landing Pages</h3>
+            <p class="muted">Fast, conversion-first landing pages with analytics & WhatsApp CTAs.</p>
+          </div>
+          <div class="service neon-card">
+            <h3>Full-stack Websites</h3>
+            <p class="muted">Responsive sites, CMS handoff, SEO basics and performance tuning.</p>
+          </div>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <strong>Starter</strong>
+            <div class="muted">Landing • ₹15,000 • 3–5 days</div>
+          </div>
+          <div class="price-card">
+            <strong>Pro</strong>
+            <div class="muted">Multi-page • ₹25,000 • 7–10 days</div>
+          </div>
+          <div class="price-card">
+            <strong>Premium</strong>
+            <div class="muted">Custom • from ₹40,000 • timeline varies</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2>Demo Websites</h2>
+        <p class="muted">Live demos and quick-launch templates you can purchase and deploy fast.</p>
+
+        <div class="portfolio-grid">
+          <article class="card">
+            <a href="real-estate/index.html" target="_blank" rel="noopener">
+              <div class="thumb"><img src="assets/demo1-thumb.jpg" alt="Demo 1" /></div>
+              <h3>Astral Heights — Real Estate</h3>
+              <p class="meta">Single-property landing • WhatsApp CTA • Lead capture</p>
+            </a>
+          </article>
+
+          <article class="card">
+            <a href="#" onclick="alert('Replace this link with your demo URL')" >
+              <div class="thumb"><img src="assets/demo2-thumb.jpg" alt="Demo 2" /></div>
+              <h3>Studio Showcase</h3>
+              <p class="meta">Portfolio landing • Fast deploy</p>
+            </a>
+          </article>
+
+          <article class="card">
+            <a href="#" onclick="alert('Replace this link with your demo URL')" >
+              <div class="thumb"><img src="assets/demo3-thumb.jpg" alt="Demo 3" /></div>
+              <h3>Product Landing</h3>
+              <p class="meta">Conversion-focused • Email / WhatsApp capture</p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">Quickest: WhatsApp. Or email — we reply within business hours.</p>
+        <div class="contact-row">
+          <div class="contact-card">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/917000000000" target="_blank" rel="noopener">+91 70000 00000</a>
+          </div>
+          <div class="contact-card">
+            <strong>Email</strong>
+            <a href="mailto:hello@unida.design">hello@unida.design</a>
+          </div>
+          <div class="contact-card">
+            <strong>Gigs</strong>
+            <div class="muted"><a href="#" target="_blank">Fiverr</a> • <a href="#" target="_blank">Upwork</a></div>
+          </div>
+        </div>
+
+        <div class="final-cta">
+          <a class="btn primary" href="mailto:hello@unida.design">Email Us</a>
+          <a class="btn ghost" href="https://wa.me/917000000000" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 UNIDA • Built for conversion</div>
   </footer>
 
   <script src="script.js"></script>
