@@ -1,84 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>UNIDA — Developer / Designer</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UNIDA — Developer & Designer (coming soon)</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- tell browser no external favicon to avoid 404 noise -->
+  <link rel="icon" href="data:," />
 </head>
 <body>
-  <header class="navbar">
-    <div class="brand">UNIDA</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#developer">Developer</a>
-      <a href="#designer">Designer</a>
-      <a href="#contact">Contact</a>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark">UNIDA</span></div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="btn-ghost">Contact</a>
     </nav>
+    <button class="mobile-toggle" aria-label="Open menu">☰</button>
   </header>
 
   <main>
-    <section id="home" class="hero">
+    <section class="hero">
       <div class="hero-inner">
-        <h1>U-Need-A <span id="role">Developer</span></h1>
-        <p class="lead">We build high-conversion landing pages & full-stack websites for local businesses — fast, clean, and conversion-focused.</p>
-        <div class="hero-ctas">
-          <a class="btn primary" href="#developer">Explore Developer</a>
-          <a class="btn ghost" href="#contact">Get a Quote</a>
+        <h1 class="hero-title">U-Need-A <span id="role">Developer</span></h1>
+        <p class="hero-sub">We design & develop conversion-forward websites for real-estate, local businesses and creators — fast, secure, and conversion-focused.</p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="projects.html">Explore Projects</a>
+          <a class="btn secondary" href="contact.html">Get a Quote</a>
         </div>
+
+        <div class="toggle-area">
+          <div class="toggle-pill">
+            <span class="pill-label">Role</span>
+            <button id="toggle-btn" class="pill-btn">Switch to Designer</button>
+          </div>
+          <p class="hint">Designer tools and templates — <strong>coming soon</strong>. Developer demos are live below.</p>
+        </div>
+      </div>
+
+      <div class="neon-grid" aria-hidden="true">
+        <span class="g1"></span><span class="g2"></span><span class="g3"></span><span class="g4"></span>
       </div>
     </section>
 
-    <section id="developer" class="section">
+    <section class="quick">
       <div class="container">
-        <h2>Developer — Real Estate Portfolio</h2>
-        <p class="muted">Sample projects you can buy and get launched quickly.</p>
-        <div class="portfolio-grid">
+        <h2>Featured: Real-Estate Demo</h2>
+        <p class="muted">Astral Heights — a focused single-property landing page with WhatsApp CTA and lead capture.</p>
+        <div class="card-row">
           <article class="card">
-            <a href="real-estate/index.html">
-              <img src="assets/image.jpeg" alt="Astral Heights thumbnail"/>
-              <h3>Astral Heights — Luxury Apartments (Bangalore)</h3>
-              <p class="meta">Landing page • Lead capture • WhatsApp CTA</p>
-            </a>
-            <div class="card-actions">
-              <a class="btn small" href="real-estate/index.html">View Demo</a>
-              <a class="btn small outline" href="#contact">Request Quote</a>
+            <img src="assets/demo1-thumb.jpg" alt="Astral Heights thumbnail" />
+            <div class="card-body">
+              <h3>Astral Heights — Demo</h3>
+              <p class="meta">Landing page • Lead capture • WhatsApp</p>
+              <div class="card-actions">
+                <a class="btn small" href="real-estate/index.html" target="_blank">Open Demo</a>
+                <a class="btn small outline" href="contact.html">Request Quote</a>
+              </div>
             </div>
           </article>
 
-          <!-- You can duplicate this card later for other demos -->
+          <article class="card dim">
+            <img src="assets/demo2-thumb.jpg" alt="Partner demo 1" />
+            <div class="card-body">
+              <h3>Partner Demo (example)</h3>
+              <p class="meta">Live link provided by partner</p>
+              <div class="card-actions">
+                <a class="btn small" href="#" onclick="alert('Replace with real URL')">Open</a>
+              </div>
+            </div>
+          </article>
         </div>
-
-        <div class="note">
-          <strong>Packages:</strong> Starter ₹15,000 • Pro ₹25,000 • Premium ₹40,000+
-        </div>
       </div>
     </section>
 
-    <section id="designer" class="section muted-section">
-      <div class="container">
-        <h2>Designer — Coming Soon</h2>
-        <p>This section is currently locked — visual design services launching soon. Want early access? Contact us.</p>
-        <button class="btn primary" onclick="location.hash='#contact'">Request Early Access</button>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <div class="container">
-        <h2>Contact UNIDA</h2>
-        <p>Fastest: WhatsApp — <a href="https://wa.me/917000000000" target="_blank" rel="noopener">+91 70000 00000</a></p>
-        <p>Email: <a href="mailto:reply.uneeda@protonmail.com">reply.uneeda@protonmail.com</a></p>
-        <p><em>Prefer Fiverr/Upwork? We respond within 2 business hours.</em></p>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">© 2025 UNIDA — Built by UNIDA Studio</div>
+    <div class="container">
+      <div class="footer-left">© 2025 UNIDA • All rights reserved</div>
+      <div class="footer-right"><a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a> • <a href="https://www.fiverr.com/" target="_blank" rel="noopener">Fiverr</a></div>
+    </div>
   </footer>
 
- <script src="script.js"></script>
-
-
+  <script src="script.js"></script>
 </body>
 </html>
