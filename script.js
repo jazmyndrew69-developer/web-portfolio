@@ -1,4 +1,3 @@
-<script>
 // Role toggle auto + button
 const roleSpan = document.getElementById('role');
 let roles = ['Developer', 'Designer'];
@@ -23,8 +22,3 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
-</script>
-
-
-
-
