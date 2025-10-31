@@ -3,71 +3,69 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>UNIDA — Developer / Designer (Coming soon)</title>
+  <title>UNIDA — Developer • Designer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:," />
 </head>
 <body>
+  <!-- canvas for animated circuit background -->
+  <canvas id="circuit-canvas" aria-hidden="true"></canvas>
+
   <header class="site-header">
     <div class="brand">UNIDA</div>
     <nav class="main-nav">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#projects">Demo Websites</a>
+      <a href="#projects">Our Projects</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="mobile-toggle" aria-label="Open menu">☰</button>
   </header>
 
-  <main>
+  <main id="page">
     <!-- HERO -->
     <section id="home" class="hero">
       <div class="hero-inner">
-        <h1 class="big-title">U-NEED-A <span class="role-wrap"><span id="role" class="role">Developer</span></span></h1>
+        <h1 class="brand-title">U-NEED-A</h1>
 
-        <div class="role-controls">
-          <button id="role-toggle" class="pill">Switch to Designer</button>
-          <div class="locked-note" id="locked-note" aria-hidden="true">Designer — Coming Soon</div>
+        <div class="role-center">
+          <div class="role-box" role="region" aria-label="Role selector">
+            <span id="role" class="role" data-text="Developer">Developer</span>
+          </div>
         </div>
 
-        <p class="tagline">We build high-conversion, AI-assisted landing pages & full-stack websites — fast, secure, and beautiful.</p>
+        <p class="hero-tag">We craft polished landing pages, websites, and UI systems — deliverables built to be fast, accessible and well-engineered. Conversions depend on many factors; our role is to provide exceptional digital products.</p>
 
         <div class="hero-ctas">
-          <a class="btn primary" href="#projects">Explore Demos</a>
-          <a class="btn ghost" href="#contact">Get a Quote</a>
+          <a class="btn primary" href="#projects">Explore Projects</a>
+          <a class="btn ghost" href="#contact">Request Quote</a>
         </div>
-      </div>
-
-      <!-- background neon accents -->
-      <div class="bg-accents" aria-hidden="true">
-        <span class="line l1"></span>
-        <span class="line l2"></span>
-        <span class="line l3"></span>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section about">
       <div class="container split">
-        <div class="box visual">
+        <div class="visual box">
           <div class="photo-clip">
             <img src="assets/demo2-thumb.jpg" alt="Studio visual" />
-            <div class="neon-border"></div>
+            <div class="moving-neon"></div>
           </div>
         </div>
-        <div class="box content">
-          <h2>About UNIDA</h2>
-          <p class="lead">UNIDA is a boutique creative-technical studio focused on high-performing web experiences. We combine clear design, rigorous front-end engineering and fast delivery for real estate, local businesses, coaches and creators.</p>
 
-          <div class="two-cols">
+        <div class="content box">
+          <h2>About UNIDA</h2>
+          <p class="lead">UNIDA is a compact creative-technical studio focused on design-forward, performance-first websites and landing pages for local businesses, real estate, coaches and creators. We deliver UI/UX, fast builds, and reliable deployment.</p>
+
+          <div class="grid-info">
             <div class="info-card">
-              <h4>Our approach</h4>
-              <p class="muted">Discovery → Prototype → Build → Launch. We measure impact and optimize for conversions.</p>
+              <h4>Approach</h4>
+              <p class="muted">Discovery • Prototype • Build • Launch. We prioritise clarity and measurable improvements.</p>
             </div>
             <div class="info-card">
-              <h4>What we deliver</h4>
-              <p class="muted">Landing pages, multi-page websites, lead capture flows, WhatsApp integration, and UI/UX systems.</p>
+              <h4>Deliverables</h4>
+              <p class="muted">Landing pages, full websites, WhatsApp CTAs, lead capture forms, and handoff-ready source files.</p>
             </div>
           </div>
         </div>
@@ -80,30 +78,32 @@
         <h2>Services & Packages</h2>
 
         <div class="services-grid">
-          <div class="service neon-card">
+          <div class="neon-card">
             <h3>UI / UX Design</h3>
-            <p class="muted">Design systems, prototypes, user journeys and visual polish.</p>
+            <p class="muted">Wireframes, visual design, prototypes and design systems.</p>
           </div>
-          <div class="service neon-card">
+
+          <div class="neon-card">
             <h3>Landing Pages</h3>
-            <p class="muted">Fast, conversion-first landing pages with analytics & WhatsApp CTAs.</p>
+            <p class="muted">Conversion-conscious builds with fast load, lead capture & WhatsApp integration.</p>
           </div>
-          <div class="service neon-card">
-            <h3>Full-stack Websites</h3>
-            <p class="muted">Responsive sites, CMS handoff, SEO basics and performance tuning.</p>
+
+          <div class="neon-card">
+            <h3>Full-Stack Websites</h3>
+            <p class="muted">Responsive sites, CMS handoff, SEO basics and fast hosting setup.</p>
           </div>
         </div>
 
         <div class="pricing">
-          <div class="price-card">
+          <div class="price-card neon-border">
             <strong>Starter</strong>
-            <div class="muted">Landing • ₹15,000 • 3–5 days</div>
+            <div class="muted">Landing page • ₹15,000 • 3–5 days</div>
           </div>
-          <div class="price-card">
+          <div class="price-card neon-border">
             <strong>Pro</strong>
             <div class="muted">Multi-page • ₹25,000 • 7–10 days</div>
           </div>
-          <div class="price-card">
+          <div class="price-card neon-border">
             <strong>Premium</strong>
             <div class="muted">Custom • from ₹40,000 • timeline varies</div>
           </div>
@@ -114,31 +114,31 @@
     <!-- PROJECTS -->
     <section id="projects" class="section projects">
       <div class="container">
-        <h2>Demo Websites</h2>
-        <p class="muted">Live demos and quick-launch templates you can purchase and deploy fast.</p>
+        <h2>Our Projects</h2>
+        <p class="muted">Templates and demos you can purchase or customise.</p>
 
         <div class="portfolio-grid">
-          <article class="card">
-            <a href="real-estate/index.html" target="_blank" rel="noopener">
+          <article class="card neon-card">
+            <a href="assets/demo1-thumb.jpg" target="_blank" rel="noopener">
               <div class="thumb"><img src="assets/demo1-thumb.jpg" alt="Demo 1" /></div>
               <h3>Astral Heights — Real Estate</h3>
-              <p class="meta">Single-property landing • WhatsApp CTA • Lead capture</p>
+              <p class="meta">Single-property landing • WhatsApp CTA</p>
             </a>
           </article>
 
-          <article class="card">
-            <a href="#" onclick="alert('Replace this link with your demo URL')" >
+          <article class="card neon-card">
+            <a href="assets/demo2-thumb.jpg" target="_blank" rel="noopener">
               <div class="thumb"><img src="assets/demo2-thumb.jpg" alt="Demo 2" /></div>
               <h3>Studio Showcase</h3>
               <p class="meta">Portfolio landing • Fast deploy</p>
             </a>
           </article>
 
-          <article class="card">
-            <a href="#" onclick="alert('Replace this link with your demo URL')" >
+          <article class="card neon-card">
+            <a href="assets/demo3-thumb.jpg" target="_blank" rel="noopener">
               <div class="thumb"><img src="assets/demo3-thumb.jpg" alt="Demo 3" /></div>
               <h3>Product Landing</h3>
-              <p class="meta">Conversion-focused • Email / WhatsApp capture</p>
+              <p class="meta">Conversion-focused • Email / WhatsApp</p>
             </a>
           </article>
         </div>
@@ -147,35 +147,40 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p class="muted">Quickest: WhatsApp. Or email — we reply within business hours.</p>
-        <div class="contact-row">
-          <div class="contact-card">
-            <strong>WhatsApp</strong>
-            <a href="https://wa.me/917000000000" target="_blank" rel="noopener">+91 70000 00000</a>
-          </div>
-          <div class="contact-card">
-            <strong>Email</strong>
-            <a href="mailto:hello@unida.design">hello@unida.design</a>
-          </div>
-          <div class="contact-card">
-            <strong>Gigs</strong>
-            <div class="muted"><a href="#" target="_blank">Fiverr</a> • <a href="#" target="_blank">Upwork</a></div>
+      <div class="container contact-split">
+        <div class="contact-left">
+          <h3>Contact</h3>
+          <p class="muted">Fastest: WhatsApp. We reply quickly to project enquiries.</p>
+          <div class="contact-details">
+            <div><strong>Email</strong><br><a href="mailto:hello@unida.design">hello@unida.design</a></div>
+            <div><strong>Phone</strong><br><a href="https://wa.me/917000000000" target="_blank">+91 70000 00000</a></div>
           </div>
         </div>
 
-        <div class="final-cta">
-          <a class="btn primary" href="mailto:hello@unida.design">Email Us</a>
-          <a class="btn ghost" href="https://wa.me/917000000000" target="_blank">WhatsApp</a>
+        <div class="contact-right">
+          <h4>Find us</h4>
+          <div class="social-row">
+            <a aria-label="Instagram" href="https://instagram.com" target="_blank" class="social inst">IG</a>
+            <a aria-label="Email" href="mailto:hello@unida.design" class="social mail">✉</a>
+            <a aria-label="Fiverr" href="https://fiverr.com" target="_blank" class="social fvr">Fv</a>
+            <a aria-label="Upwork" href="https://upwork.com" target="_blank" class="social upw">Up</a>
+            <a aria-label="WhatsApp" href="https://wa.me/917000000000" target="_blank" class="social wa">WA</a>
+          </div>
+
+          <div class="final-actions">
+            <a class="btn primary" href="mailto:hello@unida.design">Email Us</a>
+            <a class="btn ghost" href="https://wa.me/917000000000" target="_blank">WhatsApp</a>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
-    <div class="container">© 2025 UNIDA • Built for conversion</div>
+    <div class="container footer-split">
+      <div class="left">© 2025 UNIDA • Built with care</div>
+      <div class="right muted">Instagram • Fiverr • Upwork • WhatsApp</div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
