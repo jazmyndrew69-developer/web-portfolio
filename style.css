@@ -108,3 +108,39 @@ nav a:hover{color:var(--cyan);}
 
 /* FOOTER */
 footer{text-align:center;padding:18px 0;margin-top:40px;opacity:.6;}
+
+/* === ROLE TOGGLE: GLOW + GLITCH EFFECT === */
+
+#toggle-role {
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #00F6FF;
+  display: inline-block;
+  text-shadow:
+      0 0 8px rgba(0, 246, 255, 1),
+      0 0 16px rgba(0, 246, 255, 0.7),
+      0 0 32px rgba(0, 246, 255, 0.4);
+  transition: color 0.2s ease, text-shadow 0.3s ease;
+}
+
+.glitch-active {
+  animation: glitchBlink 0.45s linear;
+}
+
+@keyframes glitchBlink {
+  0%   { transform: skew(-4deg); color: #00F6FF; }
+  20%  { transform: skew(2deg);  color: #B15CFF; }
+  40%  { transform: skew(-3deg); text-shadow: 0 0 20px #B15CFF; }
+  60%  { transform: skew(1deg); color: #00F6FF; }
+  100% { transform: skew(0deg); text-shadow: 0 0 12px #00F6FF; }
+}
+
+}
+
+@keyframes glitchBlink {
+  0%   { text-shadow: 0 0 6px #00F6FF; transform: skew(-2deg); }
+  20%  { text-shadow: 0 0 12px #B15CFF; transform: skew(2deg); }
+  40%  { text-shadow: 0 0 20px #00F6FF; transform: skew(-4deg); }
+  60%  { text-shadow: 0 0 25px #B15CFF; transform: skew(2deg); }
+  100% { text-shadow: 0 0 10px #00F6FF; transform: skew(0deg); }
+}
