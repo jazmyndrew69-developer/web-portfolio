@@ -115,14 +115,14 @@ nav a:hover{color:var(--cyan);}
 }
 
 #brand-title {
-  font-size: clamp(3.8rem, 7vw, 6rem);
-  font-weight: 800;
-  letter-spacing: 3px;
-  color: #ff1493; /* NEON PINK */
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ff1493;
   text-transform: uppercase;
-  text-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493;
-  margin-bottom: 0.4em;
+  text-shadow: 0 0 15px rgba(255, 20, 147, 0.6);
 }
+
 
 /* smaller toggle capsule */
 #toggle-wrapper {
@@ -245,14 +245,12 @@ nav a:hover{color:var(--cyan);}
   stroke: var(--purple);
   transform: scale(1.22);
 }
-/* === BOTTOM COPYRIGHT STRIP === */
+
+/* copyright strip */
 .footer-bottom {
-  width: 100%;
   text-align: center;
+  font-size: 0.75rem;
   padding: 12px 0;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.65);
+  opacity: .55;
   letter-spacing: 0.5px;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  margin-top: 30px;
 }
