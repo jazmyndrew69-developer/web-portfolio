@@ -114,51 +114,60 @@ nav a:hover{color:var(--cyan);}
   padding-top: 80px;
 }
 
+/* === HERO VISUAL REFINEMENT === */
+
 #brand-title {
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(3.2rem, 6vw, 5.2rem);
   font-weight: 700;
-  letter-spacing: 2px;
-  color: #ff1493;
   text-transform: uppercase;
-  text-shadow: 0 0 15px rgba(255, 20, 147, 0.6);
+  letter-spacing: 3px;
+  color: #ff1493; /* neon pink */
+  text-shadow:
+     0 0 6px rgba(255, 20, 147, .6),
+     0 0 14px rgba(255, 20, 147, .3); /* subtle glow */
+  margin-bottom: 0.25em; /* tighter spacing */
 }
 
-
-/* smaller toggle capsule */
+/* tighter + smaller toggle capsule */
 #toggle-wrapper {
-  padding: 6px 16px;
-  border-radius: 8px;
+  padding: 4px 14px;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 1.6px solid var(--cyan);
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(8px);
-  margin-bottom: 6px;
+  border: 1.4px solid var(--cyan);
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.35);
+  margin-bottom: 12px; /* NEW — gives space between toggle + tagline */
 }
 
 #toggle-role {
-  font-size: clamp(1.2rem, 3vw, 2rem);
   font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+  letter-spacing: 1.4px;
   color: var(--cyan);
 }
 
-/* sold — smaller, elegant */
+/* coming soon — slightly bigger */
 #coming-soon {
-  font-size: 0.72rem;
-  letter-spacing: 1.4px;
+  font-size: 0.85rem; /* increased */
+  margin-top: 4px;
   opacity: 0;
-  margin-bottom: 10px;
+  letter-spacing: 1.8px;
   color: #b15cff;
+  text-transform: uppercase;
+  transition: opacity .3s ease;
 }
 
-/* subtle tagline */
+/* more breathing room above the tagline */
 .hero-subtext {
-  max-width: 600px;
-  font-size: 1rem;
-  opacity: 0.8;
+  max-width: 680px;
+  margin-top: 20px;
+  opacity: 0.85;
+  font-size: 1.1rem;
 }
+
 
 /* === NEURALFRAME-STYLE FOOTER === */
 .footer {
