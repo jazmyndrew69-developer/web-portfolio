@@ -8,41 +8,39 @@
   <link rel="icon" href="data:," />
 </head>
 <body>
-  <!-- SVG circuit (inline) -->
+  <!-- GLOBAL SVG CIRCUIT BACKGROUND (subtle, animated via CSS) -->
   <div class="svg-bg" aria-hidden="true">
-    <svg id="circuit-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <svg id="global-circuit" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="cyanPurple" x1="0" x2="1">
+        <linearGradient id="gp" x1="0" x2="1">
           <stop offset="0" stop-color="#00c6ff"/>
           <stop offset="1" stop-color="#b25cff"/>
         </linearGradient>
       </defs>
 
-      <!-- primary moving long paths -->
-      <g stroke="url(#cyanPurple)" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.9">
-        <!-- long rails -->
-        <path class="rail" d="M20 100 L980 100 L1100 220 L1560 220"/>
-        <path class="rail" d="M10 260 L760 260 L920 350 L1520 350"/>
-        <path class="rail" d="M40 440 L840 440 L1010 540 L1500 540"/>
-        <path class="rail" d="M30 640 L920 640 L1250 760 L1580 760"/>
-        <!-- connectors -->
-        <path class="connector" d="M760 100 L760 260"/>
-        <path class="connector" d="M920 350 L920 440"/>
-        <path class="connector" d="M1010 540 L1010 640"/>
+      <!-- repeating rails + connectors (drop in more paths to increase density) -->
+      <g stroke="url(#gp)" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.95">
+        <path class="rail" d="M10 120 L540 120 L660 210 L1460 210"/>
+        <path class="rail" d="M20 300 L520 300 L760 400 L1500 400"/>
+        <path class="rail" d="M50 480 L680 480 L1050 600 L1550 600"/>
+        <path class="rail" d="M30 680 L760 680 L1200 820 L1580 820"/>
+        <path class="conn" d="M540 120 L540 300"/>
+        <path class="conn" d="M760 400 L760 480"/>
+        <path class="conn" d="M1050 600 L1050 680"/>
       </g>
 
-      <!-- subtle moving highlights (short dashes) -->
-      <g stroke="url(#cyanPurple)" stroke-width="2" stroke-linecap="round" opacity="0.14">
-        <path class="pulse" d="M20 100 L980 100" />
-        <path class="pulse" d="M40 440 L840 440" />
-        <path class="pulse" d="M30 640 L920 640" />
+      <!-- moving pulses for kinetic feel -->
+      <g stroke="url(#gp)" stroke-width="2" stroke-linecap="round" opacity="0.12">
+        <path class="pulse" d="M20 120 L540 120" />
+        <path class="pulse" d="M50 480 L680 480" />
+        <path class="pulse" d="M30 680 L760 680" />
       </g>
     </svg>
   </div>
 
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="brand">UNIDA</div>
-    <nav class="main-nav">
+    <nav class="main-nav" role="navigation" aria-label="Primary">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -55,12 +53,11 @@
   <main id="page" role="main">
     <!-- HERO -->
     <section id="home" class="hero">
-      <div class="hero-inner">
+      <div class="hero-inner container">
         <h1 class="brand-title">U-NEED-A</h1>
 
-        <!-- centered role box (electric effect) -->
         <div class="role-center" aria-hidden="false">
-          <div class="role-box" role="button" tabindex="0" aria-label="Toggle role (Developer / Designer)">
+          <div class="role-box" role="button" tabindex="0" aria-label="Toggle role">
             <span id="role" class="role" data-text="Developer">Developer</span>
             <span class="electric-spark" aria-hidden="true"></span>
           </div>
@@ -81,39 +78,39 @@
         <div class="visual box">
           <div class="photo-clip">
             <img src="assets/demo2-thumb.jpg" alt="Studio visual" />
-            <div class="moving-neon"></div>
+            <div class="moving-neon" aria-hidden="true"></div>
           </div>
         </div>
 
         <div class="content box">
           <h2>About UNIDA</h2>
-          <p class="lead">UNIDA is a compact creative-technical studio focused on design-forward, performance-first websites and landing pages. We deliver UI/UX, fast builds, and reliable deployments for real estate, businesses, and creators.</p>
+          <p class="lead">UNIDA is a compact creative-technical studio focused on design-forward and performance-first websites and landing pages. We deliver UI/UX, fast builds, and reliable deployments for real estate, local businesses, coaches and creators.</p>
 
           <div class="grid-info">
             <div class="info-card">
               <h4>Approach</h4>
-              <p class="muted">Discovery • Prototype • Build • Launch. Clarity, performance and handoff-ready code.</p>
+              <p class="muted">Discovery • Prototype • Build • Launch — clarity and handoff-ready code.</p>
             </div>
             <div class="info-card">
               <h4>Deliverables</h4>
-              <p class="muted">Landing pages, multi-page sites, WhatsApp CTAs and lead capture flows.</p>
+              <p class="muted">Landing pages, multi-page websites, WhatsApp CTAs, lead capture, and deployment guidance.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES & PACKAGES (individual frames) -->
+    <!-- SERVICES & PACKAGES -->
     <section id="services" class="section services">
       <div class="container">
         <h2>Services & Packages</h2>
 
         <div class="services-grid">
-          <!-- each card is a black box with animated border only -->
           <div class="service-frame" tabindex="0" data-url="#">
             <div class="service-inner">
               <h3>UI / UX</h3>
               <p class="muted">Research-led UX, wireframes and visual design.</p>
+
               <div class="package-box">
                 <div class="pkg-title">Starter</div>
                 <div class="pkg-price">₹15,000</div>
@@ -125,7 +122,8 @@
           <div class="service-frame" tabindex="0" data-url="#">
             <div class="service-inner">
               <h3>Landing Pages</h3>
-              <p class="muted">Conversion-conscious builds with lead capture.</p>
+              <p class="muted">Fast, conversion-conscious pages with lead capture.</p>
+
               <div class="package-box">
                 <div class="pkg-title">Professional</div>
                 <div class="pkg-price">₹25,000</div>
@@ -138,10 +136,11 @@
             <div class="service-inner">
               <h3>Full-Stack Websites</h3>
               <p class="muted">Responsive sites, CMS and deployment guidance.</p>
+
               <div class="package-box">
                 <div class="pkg-title">Premium</div>
                 <div class="pkg-price">from ₹40,000</div>
-                <div class="pkg-desc muted">Custom stacks, integrations & SLAs</div>
+                <div class="pkg-desc muted">Custom integrations • SLA options</div>
               </div>
             </div>
           </div>
@@ -149,11 +148,11 @@
       </div>
     </section>
 
-    <!-- PROJECTS — frames identical to service frames; click whole frame opens demo via data-url -->
+    <!-- PROJECTS -->
     <section id="projects" class="section projects">
       <div class="container">
         <h2>Our Projects</h2>
-        <p class="muted">Placeholders — click a card to open demo (replace data-url in HTML with actual demo link).</p>
+        <p class="muted">Click any card to open the demo. Replace each card's <code>data-url</code> with the real demo link.</p>
 
         <div class="portfolio-grid">
           <div class="project-frame" tabindex="0" data-url="https://example.com/demo1">
@@ -198,24 +197,37 @@
         <div class="contact-right">
           <h4>Find us</h4>
           <div class="social-row">
-            <a aria-label="Instagram" href="#" target="_blank" class="social inst">IG</a>
-            <a aria-label="Email" href="mailto:reply.uneeda@protonmail.com" class="social mail">✉</a>
-            <a aria-label="Fiverr" href="#" target="_blank" class="social fvr">Fv</a>
-            <a aria-label="Upwork" href="#" target="_blank" class="social upw">Up</a>
-            <a aria-label="WhatsApp" href="https://wa.me/919832081719" target="_blank" class="social wa">WA</a>
+            <a aria-label="Instagram" href="#" target="_blank" class="social inst" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+            </a>
+
+            <a aria-label="Email" href="mailto:reply.uneeda@protonmail.com" class="social mail" title="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 8.5l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+            </a>
+
+            <a aria-label="Fiverr" href="#" target="_blank" class="social fvr" title="Fiverr">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="7"/></svg>
+            </a>
+
+            <a aria-label="Upwork" href="#" target="_blank" class="social upw" title="Upwork">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20v-8l8-8 8 8v8"/></svg>
+            </a>
+
+            <a aria-label="WhatsApp" href="https://wa.me/919832081719" target="_blank" class="social wa" title="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.3A8.9 8.9 0 1 1 13.7 3L21 8.7z"/></svg>
+            </a>
           </div>
 
-          <div class="final-actions">
+          <div class="final-actions" style="margin-top:14px">
             <a class="btn primary" href="mailto:reply.uneeda@protonmail.com">Email Us</a>
             <a class="btn ghost" href="https://wa.me/919832081719" target="_blank">WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- cinematic split footer (UNIDA-styled) -->
+  <!-- cinematic split footer -->
   <footer class="site-footer">
     <div class="container footer-split">
       <div class="left">
@@ -225,11 +237,11 @@
 
       <div class="right">
         <div class="footer-links">
-          <a href="#" class="social-icon">IG</a>
-          <a href="mailto:reply.uneeda@protonmail.com" class="social-icon">✉</a>
-          <a href="#" class="social-icon">Fv</a>
-          <a href="#" class="social-icon">Up</a>
-          <a href="https://wa.me/919832081719" class="social-icon">WA</a>
+          <a href="#" class="social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="4"/></svg></a>
+          <a href="mailto:reply.uneeda@protonmail.com" class="social-icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 8.5l9 6 9-6"/></svg></a>
+          <a href="#" class="social-icon" aria-label="Fiverr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="7"/></svg></a>
+          <a href="#" class="social-icon" aria-label="Upwork"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20v-8l8-8 8 8v8"/></svg></a>
+          <a href="https://wa.me/919832081719" class="social-icon" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.3A8.9 8.9 0 1 1 13.7 3L21 8.7z"/></svg></a>
         </div>
       </div>
     </div>
