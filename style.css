@@ -98,8 +98,7 @@ nav a:hover{color:var(--cyan);}
 .contact-section p{font-size:1.2rem;margin:10px 0;}
 .contact-section a{color:var(--cyan);}
 
-/* FOOTER */
-footer{text-align:center;padding:18px 0;margin-top:40px;opacity:.6;}
+
 
 /* === ROLE TOGGLE: GLOW + GLITCH EFFECT === */
 
@@ -198,4 +197,51 @@ footer{text-align:center;padding:18px 0;margin-top:40px;opacity:.6;}
 .footer-icon:hover {
   opacity: 1;
   transform: scale(1.15);
+}
+/* === PREMIUM FOOTER — SLEEK MINIMAL RGB LINE === */
+
+.footer {
+  padding: 60px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.footer-left h3 {
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: var(--cyan);
+}
+
+.footer-left p {
+  margin-top: 6px;
+  max-width: 320px;
+  opacity: .75;
+}
+
+.footer-contact {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  opacity: .85;
+}
+
+.footer-right {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.footer-icon svg {
+  transition: 0.22s ease;
+}
+
+.footer-icon:hover svg {
+  stroke: var(--purple);
+  transform: scale(1.22);
 }
