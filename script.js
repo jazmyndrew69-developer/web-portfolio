@@ -15,3 +15,7 @@ function updateRole() {
 
 setInterval(updateRole, 1600);
 updateRole();
+wrapper.addEventListener("mouseenter", () => {
+  glitchSound.currentTime = 0;
+  glitchSound.play();
+});
