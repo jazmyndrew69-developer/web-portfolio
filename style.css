@@ -263,3 +263,12 @@ nav a:hover{color:var(--cyan);}
   opacity: .55;
   letter-spacing: 0.5px;
 }
+
+/* === PROJECT THUMBNAILS === */
+.project-card img.project-thumb {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
