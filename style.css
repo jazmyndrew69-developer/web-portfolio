@@ -245,3 +245,14 @@ nav a:hover{color:var(--cyan);}
   stroke: var(--purple);
   transform: scale(1.22);
 }
+/* === BOTTOM COPYRIGHT STRIP === */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin-top: 30px;
+}
