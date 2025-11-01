@@ -27,19 +27,27 @@
   </header>
 
   <!-- HERO -->
-  <section id="home" class="hero">
-      <h1>U-NEED-A<span id="toggle-wrapper">
-    <span id="toggle-role" class="glitch"></span>
-    <span id="coming-soon">Coming soon</span>
-  </span>
-</h1>
+  <section id="hero">
+  <video autoplay muted loop id="bg-video">
+    <source src="assets/circuit.webm" type="video/webm" />
+    <source src="assets/circuit.mp4" type="video/mp4" />
+  </video>
 
-      </h1>
-      <p class="subtitle">We craft sleek, AI-driven landing pages, websites, and digital systems that elevate your brand experience.</p>
-      <button class="cta-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-        Explore Projects
-      </button>
-  </section>
+  <div class="hero-content">
+    <h1 id="brand-title">U-NEED-A</h1>
+
+    <div id="toggle-wrapper">
+      <span id="toggle-role" class="glitch">Developer</span>
+    </div>
+
+    <span id="coming-soon">Designer (coming soon)</span>
+
+    <p class="hero-subtext">
+      We craft sleek, AI-powered landing pages and websites that elevate your brand.
+    </p>
+  </div>
+</section>
+
 
   <!-- ABOUT -->
   <section id="about" class="section">
