@@ -146,61 +146,56 @@ footer{text-align:center;padding:18px 0;margin-top:40px;opacity:.6;}
 }
 /* ==== EDGY PREMIUM TOGGLE LOOK ==== */
 
+/* === CLEAN + SLEEK TOGGLE CAPSULE === */
+
 #toggle-wrapper {
-  position: relative;
-  display: inline-block;
-  padding: 4px 10px;
+  padding: 8px 18px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   cursor: pointer;
+  margin-top: 10px;
+  position: relative;
+  border: 2px solid transparent;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+}
+
+#toggle-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: rgb-flow 4s linear infinite;
 }
 
 #toggle-role {
-  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
   font-weight: 900;
   letter-spacing: .5px;
-  display: inline-block;
-  color: var(--cyan);
-  filter: drop-shadow(0 0 14px rgba(0,246,255,.6));
-  transition: filter .2s ease;
+  transition: transform .2s ease;
 }
 
-/* glitch animation */
+/* glitch stays, but glow removed */
 .glitch-active {
-  animation: glitchEffect .4s linear;
+  animation: glitchEffect 0.38s linear;
 }
 
-@keyframes glitchEffect {
-  0% { transform: translate(-2px, 2px); color: var(--cyan); }
-  40% { transform: translate(2px, -1px); color: var(--purple); }
-  70% { transform: translate(-1px, 1px); color: var(--cyan); }
-  100% { transform: translate(0,0); }
-}
-
-/* hover electric sparks */
-#toggle-wrapper:hover #toggle-role::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:4px;
-  pointer-events:none;
-  background:
-    radial-gradient(circle, rgba(0,246,255,.6) 0%, transparent 60%);
-  animation:spark .18s ease-out;
-}
-
-@keyframes spark {
-  from { opacity:1; transform:scale(.6); }
-  to { opacity:0; transform:scale(2); }
-}
-
-/* Coming soon micro text */
+/* coming soon — cleaner */
 #coming-soon {
-  font-size:.8rem;
-  color:#B15CFF;
-  opacity:0;
-  display:block;
-  text-align:center;
-  margin-top:-4px;
-  letter-spacing:1px;
-  transition:opacity .3s ease;
-  user-select:none;
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+  font-size: .75rem;
+  opacity: 0;
+  letter-spacing: 1.2px;
+  color: #B15CFF;
+  transition: opacity .3s ease;
 }
