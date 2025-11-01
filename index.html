@@ -8,27 +8,34 @@
   <link rel="icon" href="data:," />
 </head>
 <body>
-  <!-- Inline SVG circuit background (animated by CSS) -->
+  <!-- SVG circuit (inline) -->
   <div class="svg-bg" aria-hidden="true">
     <svg id="circuit-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="g1" x1="0" x2="1">
+        <linearGradient id="cyanPurple" x1="0" x2="1">
           <stop offset="0" stop-color="#00c6ff"/>
           <stop offset="1" stop-color="#b25cff"/>
         </linearGradient>
       </defs>
 
-      <!-- grid of long paths — subtle moving dash effect -->
-      <g class="circuit-lines" fill="none" stroke="url(#g1)" stroke-width="1.2" stroke-linecap="round" opacity="0.9">
-        <path class="c-path" d="M20 120 L600 120 L650 180 L1200 180" />
-        <path class="c-path" d="M40 260 L400 260 L480 320 L1450 320" />
-        <path class="c-path" d="M0 420 L300 420 L500 460 L1300 460" />
-        <path class="c-path" d="M50 580 L700 580 L850 640 L1500 640" />
-        <path class="c-path" d="M80 760 L900 760 L1200 820 L1580 820" />
-        <!-- additional shorter connectors -->
-        <path class="c-path small" d="M700 120 L700 260" />
-        <path class="c-path small" d="M480 320 L480 420" />
-        <path class="c-path small" d="M850 640 L850 760" />
+      <!-- primary moving long paths -->
+      <g stroke="url(#cyanPurple)" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.9">
+        <!-- long rails -->
+        <path class="rail" d="M20 100 L980 100 L1100 220 L1560 220"/>
+        <path class="rail" d="M10 260 L760 260 L920 350 L1520 350"/>
+        <path class="rail" d="M40 440 L840 440 L1010 540 L1500 540"/>
+        <path class="rail" d="M30 640 L920 640 L1250 760 L1580 760"/>
+        <!-- connectors -->
+        <path class="connector" d="M760 100 L760 260"/>
+        <path class="connector" d="M920 350 L920 440"/>
+        <path class="connector" d="M1010 540 L1010 640"/>
+      </g>
+
+      <!-- subtle moving highlights (short dashes) -->
+      <g stroke="url(#cyanPurple)" stroke-width="2" stroke-linecap="round" opacity="0.14">
+        <path class="pulse" d="M20 100 L980 100" />
+        <path class="pulse" d="M40 440 L840 440" />
+        <path class="pulse" d="M30 640 L920 640" />
       </g>
     </svg>
   </div>
@@ -51,14 +58,15 @@
       <div class="hero-inner">
         <h1 class="brand-title">U-NEED-A</h1>
 
-        <!-- centered role box -->
+        <!-- centered role box (electric effect) -->
         <div class="role-center" aria-hidden="false">
           <div class="role-box" role="button" tabindex="0" aria-label="Toggle role (Developer / Designer)">
             <span id="role" class="role" data-text="Developer">Developer</span>
+            <span class="electric-spark" aria-hidden="true"></span>
           </div>
         </div>
 
-        <p class="hero-tag">We craft sleek, AI-driven landing pages, websites, and digital systems that elevate your brand experience. We deliver the product — results (conversions) depend on many factors beyond design.</p>
+        <p class="hero-tag">We craft sleek, AI-driven landing pages, websites, and digital systems that elevate your brand experience. We deliver the product — conversions depend on many factors beyond design.</p>
 
         <div class="hero-ctas">
           <a class="btn primary" href="#projects">Explore Projects</a>
@@ -79,102 +87,98 @@
 
         <div class="content box">
           <h2>About UNIDA</h2>
-          <p class="lead">UNIDA is a compact creative-technical studio focused on design-forward and performance-first websites and landing pages for real estate, local businesses, coaches and creators. We deliver UI/UX, fast builds, and reliable deployments.</p>
+          <p class="lead">UNIDA is a compact creative-technical studio focused on design-forward, performance-first websites and landing pages. We deliver UI/UX, fast builds, and reliable deployments for real estate, businesses, and creators.</p>
 
           <div class="grid-info">
             <div class="info-card">
               <h4>Approach</h4>
-              <p class="muted">Discovery • Prototype • Build • Launch. We prioritise clarity, performance and handoff-ready code.</p>
+              <p class="muted">Discovery • Prototype • Build • Launch. Clarity, performance and handoff-ready code.</p>
             </div>
             <div class="info-card">
               <h4>Deliverables</h4>
-              <p class="muted">Landing pages, multi-page websites, WhatsApp CTA integration, lead capture forms, and source handoff.</p>
+              <p class="muted">Landing pages, multi-page sites, WhatsApp CTAs and lead capture flows.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES & PACKAGES -->
+    <!-- SERVICES & PACKAGES (individual frames) -->
     <section id="services" class="section services">
       <div class="container">
         <h2>Services & Packages</h2>
 
         <div class="services-grid">
-          <div class="neon-card static-border">
-            <h3>UI / UX</h3>
-            <p class="muted">Research-driven UX, wireframes, and pixel-accurate UI.</p>
-          </div>
-
-          <div class="neon-card static-border">
-            <h3>Landing Pages</h3>
-            <p class="muted">Fast, focused pages built for lead capture and a strong first impression.</p>
-          </div>
-
-          <div class="neon-card static-border">
-            <h3>Full-Stack Websites</h3>
-            <p class="muted">Responsive sites with clean CMS handoff and deployment guidance.</p>
-          </div>
-        </div>
-
-        <div class="pricing">
-          <div class="price-card neon-border">
-            <div class="price-inner">
-              <strong>Starter</strong>
-              <div class="price-tag">₹15,000</div>
-              <p class="muted">Landing page • WhatsApp CTA • 3–5 days</p>
+          <!-- each card is a black box with animated border only -->
+          <div class="service-frame" tabindex="0" data-url="#">
+            <div class="service-inner">
+              <h3>UI / UX</h3>
+              <p class="muted">Research-led UX, wireframes and visual design.</p>
+              <div class="package-box">
+                <div class="pkg-title">Starter</div>
+                <div class="pkg-price">₹15,000</div>
+                <div class="pkg-desc muted">Landing page • WhatsApp CTA • 3–5 days</div>
+              </div>
             </div>
           </div>
 
-          <div class="price-card neon-border">
-            <div class="price-inner">
-              <strong>Professional</strong>
-              <div class="price-tag">₹25,000</div>
-              <p class="muted">Multi-page • Forms • CMS handoff • 7–10 days</p>
+          <div class="service-frame" tabindex="0" data-url="#">
+            <div class="service-inner">
+              <h3>Landing Pages</h3>
+              <p class="muted">Conversion-conscious builds with lead capture.</p>
+              <div class="package-box">
+                <div class="pkg-title">Professional</div>
+                <div class="pkg-price">₹25,000</div>
+                <div class="pkg-desc muted">Multi-page • Forms • CMS handoff • 7–10 days</div>
+              </div>
             </div>
           </div>
 
-          <div class="price-card neon-border">
-            <div class="price-inner">
-              <strong>Premium</strong>
-              <div class="price-tag">from ₹40,000</div>
-              <p class="muted">Custom stack • Integrations • SLA-based timeline</p>
+          <div class="service-frame" tabindex="0" data-url="#">
+            <div class="service-inner">
+              <h3>Full-Stack Websites</h3>
+              <p class="muted">Responsive sites, CMS and deployment guidance.</p>
+              <div class="package-box">
+                <div class="pkg-title">Premium</div>
+                <div class="pkg-price">from ₹40,000</div>
+                <div class="pkg-desc muted">Custom stacks, integrations & SLAs</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS — frames identical to service frames; click whole frame opens demo via data-url -->
     <section id="projects" class="section projects">
       <div class="container">
         <h2>Our Projects</h2>
-        <p class="muted">Placeholder demos — replace with live demo links when ready.</p>
+        <p class="muted">Placeholders — click a card to open demo (replace data-url in HTML with actual demo link).</p>
 
         <div class="portfolio-grid">
-          <article class="card neon-card">
-            <a href="#" onclick="alert('Replace with demo URL')" >
-              <div class="thumb"><img src="assets/demo1-thumb.jpg" alt="Demo 1" /></div>
+          <div class="project-frame" tabindex="0" data-url="https://example.com/demo1">
+            <div class="project-inner">
+              <div class="thumb"><img src="assets/demo1-thumb.jpg" alt="Demo 1"></div>
               <h3>Astral Heights — Real Estate</h3>
-              <p class="meta">Single-property landing • WhatsApp CTA</p>
-            </a>
-          </article>
+              <p class="meta muted">Single-property landing • WhatsApp CTA</p>
+            </div>
+          </div>
 
-          <article class="card neon-card">
-            <a href="#" onclick="alert('Replace with demo URL')" >
-              <div class="thumb"><img src="assets/demo2-thumb.jpg" alt="Demo 2" /></div>
+          <div class="project-frame" tabindex="0" data-url="https://example.com/demo2">
+            <div class="project-inner">
+              <div class="thumb"><img src="assets/demo2-thumb.jpg" alt="Demo 2"></div>
               <h3>Studio Showcase</h3>
-              <p class="meta">Portfolio landing • Fast deploy</p>
-            </a>
-          </article>
+              <p class="meta muted">Portfolio landing • Fast deploy</p>
+            </div>
+          </div>
 
-          <article class="card neon-card">
-            <a href="#" onclick="alert('Replace with demo URL')" >
-              <div class="thumb"><img src="assets/demo3-thumb.jpg" alt="Demo 3" /></div>
+          <div class="project-frame" tabindex="0" data-url="https://example.com/demo3">
+            <div class="project-inner">
+              <div class="thumb"><img src="assets/demo3-thumb.jpg" alt="Demo 3"></div>
               <h3>Product Landing</h3>
-              <p class="meta">Email / WhatsApp capture</p>
-            </a>
-          </article>
+              <p class="meta muted">Email / WhatsApp capture</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -211,10 +215,23 @@
 
   </main>
 
+  <!-- cinematic split footer (UNIDA-styled) -->
   <footer class="site-footer">
     <div class="container footer-split">
-      <div class="left">© 2025 UNIDA • Built with clarity</div>
-      <div class="right muted">IG • Fiverr • Upwork • WhatsApp</div>
+      <div class="left">
+        <div class="footer-brand">UNIDA</div>
+        <div class="footer-contact muted">reply.uneeda@protonmail.com • +91 98320 81719</div>
+      </div>
+
+      <div class="right">
+        <div class="footer-links">
+          <a href="#" class="social-icon">IG</a>
+          <a href="mailto:reply.uneeda@protonmail.com" class="social-icon">✉</a>
+          <a href="#" class="social-icon">Fv</a>
+          <a href="#" class="social-icon">Up</a>
+          <a href="https://wa.me/919832081719" class="social-icon">WA</a>
+        </div>
+      </div>
     </div>
   </footer>
 
