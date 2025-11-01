@@ -3,13 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>UNIDA — Developer • Designer</title>
+  <title>UNIDA — Developer · Designer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:," />
 </head>
 <body>
-  <!-- canvas for animated circuit background -->
-  <canvas id="circuit-canvas" aria-hidden="true"></canvas>
+  <!-- Inline SVG circuit background (animated by CSS) -->
+  <div class="svg-bg" aria-hidden="true">
+    <svg id="circuit-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0" stop-color="#00c6ff"/>
+          <stop offset="1" stop-color="#b25cff"/>
+        </linearGradient>
+      </defs>
+
+      <!-- grid of long paths — subtle moving dash effect -->
+      <g class="circuit-lines" fill="none" stroke="url(#g1)" stroke-width="1.2" stroke-linecap="round" opacity="0.9">
+        <path class="c-path" d="M20 120 L600 120 L650 180 L1200 180" />
+        <path class="c-path" d="M40 260 L400 260 L480 320 L1450 320" />
+        <path class="c-path" d="M0 420 L300 420 L500 460 L1300 460" />
+        <path class="c-path" d="M50 580 L700 580 L850 640 L1500 640" />
+        <path class="c-path" d="M80 760 L900 760 L1200 820 L1580 820" />
+        <!-- additional shorter connectors -->
+        <path class="c-path small" d="M700 120 L700 260" />
+        <path class="c-path small" d="M480 320 L480 420" />
+        <path class="c-path small" d="M850 640 L850 760" />
+      </g>
+    </svg>
+  </div>
 
   <header class="site-header">
     <div class="brand">UNIDA</div>
@@ -23,19 +45,20 @@
     <button class="mobile-toggle" aria-label="Open menu">☰</button>
   </header>
 
-  <main id="page">
+  <main id="page" role="main">
     <!-- HERO -->
     <section id="home" class="hero">
       <div class="hero-inner">
         <h1 class="brand-title">U-NEED-A</h1>
 
-        <div class="role-center">
-          <div class="role-box" role="region" aria-label="Role selector">
+        <!-- centered role box -->
+        <div class="role-center" aria-hidden="false">
+          <div class="role-box" role="button" tabindex="0" aria-label="Toggle role (Developer / Designer)">
             <span id="role" class="role" data-text="Developer">Developer</span>
           </div>
         </div>
 
-        <p class="hero-tag">We craft polished landing pages, websites, and UI systems — deliverables built to be fast, accessible and well-engineered. Conversions depend on many factors; our role is to provide exceptional digital products.</p>
+        <p class="hero-tag">We craft sleek, AI-driven landing pages, websites, and digital systems that elevate your brand experience. We deliver the product — results (conversions) depend on many factors beyond design.</p>
 
         <div class="hero-ctas">
           <a class="btn primary" href="#projects">Explore Projects</a>
@@ -56,56 +79,67 @@
 
         <div class="content box">
           <h2>About UNIDA</h2>
-          <p class="lead">UNIDA is a compact creative-technical studio focused on design-forward, performance-first websites and landing pages for local businesses, real estate, coaches and creators. We deliver UI/UX, fast builds, and reliable deployment.</p>
+          <p class="lead">UNIDA is a compact creative-technical studio focused on design-forward and performance-first websites and landing pages for real estate, local businesses, coaches and creators. We deliver UI/UX, fast builds, and reliable deployments.</p>
 
           <div class="grid-info">
             <div class="info-card">
               <h4>Approach</h4>
-              <p class="muted">Discovery • Prototype • Build • Launch. We prioritise clarity and measurable improvements.</p>
+              <p class="muted">Discovery • Prototype • Build • Launch. We prioritise clarity, performance and handoff-ready code.</p>
             </div>
             <div class="info-card">
               <h4>Deliverables</h4>
-              <p class="muted">Landing pages, full websites, WhatsApp CTAs, lead capture forms, and handoff-ready source files.</p>
+              <p class="muted">Landing pages, multi-page websites, WhatsApp CTA integration, lead capture forms, and source handoff.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES & PACKAGES -->
     <section id="services" class="section services">
       <div class="container">
         <h2>Services & Packages</h2>
 
         <div class="services-grid">
-          <div class="neon-card">
-            <h3>UI / UX Design</h3>
-            <p class="muted">Wireframes, visual design, prototypes and design systems.</p>
+          <div class="neon-card static-border">
+            <h3>UI / UX</h3>
+            <p class="muted">Research-driven UX, wireframes, and pixel-accurate UI.</p>
           </div>
 
-          <div class="neon-card">
+          <div class="neon-card static-border">
             <h3>Landing Pages</h3>
-            <p class="muted">Conversion-conscious builds with fast load, lead capture & WhatsApp integration.</p>
+            <p class="muted">Fast, focused pages built for lead capture and a strong first impression.</p>
           </div>
 
-          <div class="neon-card">
+          <div class="neon-card static-border">
             <h3>Full-Stack Websites</h3>
-            <p class="muted">Responsive sites, CMS handoff, SEO basics and fast hosting setup.</p>
+            <p class="muted">Responsive sites with clean CMS handoff and deployment guidance.</p>
           </div>
         </div>
 
         <div class="pricing">
           <div class="price-card neon-border">
-            <strong>Starter</strong>
-            <div class="muted">Landing page • ₹15,000 • 3–5 days</div>
+            <div class="price-inner">
+              <strong>Starter</strong>
+              <div class="price-tag">₹15,000</div>
+              <p class="muted">Landing page • WhatsApp CTA • 3–5 days</p>
+            </div>
           </div>
+
           <div class="price-card neon-border">
-            <strong>Pro</strong>
-            <div class="muted">Multi-page • ₹25,000 • 7–10 days</div>
+            <div class="price-inner">
+              <strong>Professional</strong>
+              <div class="price-tag">₹25,000</div>
+              <p class="muted">Multi-page • Forms • CMS handoff • 7–10 days</p>
+            </div>
           </div>
+
           <div class="price-card neon-border">
-            <strong>Premium</strong>
-            <div class="muted">Custom • from ₹40,000 • timeline varies</div>
+            <div class="price-inner">
+              <strong>Premium</strong>
+              <div class="price-tag">from ₹40,000</div>
+              <p class="muted">Custom stack • Integrations • SLA-based timeline</p>
+            </div>
           </div>
         </div>
       </div>
@@ -115,11 +149,11 @@
     <section id="projects" class="section projects">
       <div class="container">
         <h2>Our Projects</h2>
-        <p class="muted">Templates and demos you can purchase or customise.</p>
+        <p class="muted">Placeholder demos — replace with live demo links when ready.</p>
 
         <div class="portfolio-grid">
           <article class="card neon-card">
-            <a href="assets/demo1-thumb.jpg" target="_blank" rel="noopener">
+            <a href="#" onclick="alert('Replace with demo URL')" >
               <div class="thumb"><img src="assets/demo1-thumb.jpg" alt="Demo 1" /></div>
               <h3>Astral Heights — Real Estate</h3>
               <p class="meta">Single-property landing • WhatsApp CTA</p>
@@ -127,7 +161,7 @@
           </article>
 
           <article class="card neon-card">
-            <a href="assets/demo2-thumb.jpg" target="_blank" rel="noopener">
+            <a href="#" onclick="alert('Replace with demo URL')" >
               <div class="thumb"><img src="assets/demo2-thumb.jpg" alt="Demo 2" /></div>
               <h3>Studio Showcase</h3>
               <p class="meta">Portfolio landing • Fast deploy</p>
@@ -135,10 +169,10 @@
           </article>
 
           <article class="card neon-card">
-            <a href="assets/demo3-thumb.jpg" target="_blank" rel="noopener">
+            <a href="#" onclick="alert('Replace with demo URL')" >
               <div class="thumb"><img src="assets/demo3-thumb.jpg" alt="Demo 3" /></div>
               <h3>Product Landing</h3>
-              <p class="meta">Conversion-focused • Email / WhatsApp</p>
+              <p class="meta">Email / WhatsApp capture</p>
             </a>
           </article>
         </div>
@@ -152,34 +186,35 @@
           <h3>Contact</h3>
           <p class="muted">Fastest: WhatsApp. We reply quickly to project enquiries.</p>
           <div class="contact-details">
-            <div><strong>Email</strong><br><a href="mailto:hello@unida.design">hello@unida.design</a></div>
-            <div><strong>Phone</strong><br><a href="https://wa.me/917000000000" target="_blank">+91 70000 00000</a></div>
+            <div><strong>Email</strong><br><a href="mailto:reply.uneeda@protonmail.com">reply.uneeda@protonmail.com</a></div>
+            <div style="margin-top:8px"><strong>Phone / WhatsApp</strong><br><a href="https://wa.me/919832081719" target="_blank">+91 98320 81719</a></div>
           </div>
         </div>
 
         <div class="contact-right">
           <h4>Find us</h4>
           <div class="social-row">
-            <a aria-label="Instagram" href="https://instagram.com" target="_blank" class="social inst">IG</a>
-            <a aria-label="Email" href="mailto:hello@unida.design" class="social mail">✉</a>
-            <a aria-label="Fiverr" href="https://fiverr.com" target="_blank" class="social fvr">Fv</a>
-            <a aria-label="Upwork" href="https://upwork.com" target="_blank" class="social upw">Up</a>
-            <a aria-label="WhatsApp" href="https://wa.me/917000000000" target="_blank" class="social wa">WA</a>
+            <a aria-label="Instagram" href="#" target="_blank" class="social inst">IG</a>
+            <a aria-label="Email" href="mailto:reply.uneeda@protonmail.com" class="social mail">✉</a>
+            <a aria-label="Fiverr" href="#" target="_blank" class="social fvr">Fv</a>
+            <a aria-label="Upwork" href="#" target="_blank" class="social upw">Up</a>
+            <a aria-label="WhatsApp" href="https://wa.me/919832081719" target="_blank" class="social wa">WA</a>
           </div>
 
           <div class="final-actions">
-            <a class="btn primary" href="mailto:hello@unida.design">Email Us</a>
-            <a class="btn ghost" href="https://wa.me/917000000000" target="_blank">WhatsApp</a>
+            <a class="btn primary" href="mailto:reply.uneeda@protonmail.com">Email Us</a>
+            <a class="btn ghost" href="https://wa.me/919832081719" target="_blank">WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container footer-split">
-      <div class="left">© 2025 UNIDA • Built with care</div>
-      <div class="right muted">Instagram • Fiverr • Upwork • WhatsApp</div>
+      <div class="left">© 2025 UNIDA • Built with clarity</div>
+      <div class="right muted">IG • Fiverr • Upwork • WhatsApp</div>
     </div>
   </footer>
 
