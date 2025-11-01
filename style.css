@@ -148,54 +148,101 @@ footer{text-align:center;padding:18px 0;margin-top:40px;opacity:.6;}
 
 /* === CLEAN + SLEEK TOGGLE CAPSULE === */
 
+/* === CLEAN + SLEEK TOGGLE CAPSULE === */
+
 #toggle-wrapper {
-  padding: 8px 18px;
-  border-radius: 12px;
+  padding: 4px 10px;
+  border-radius: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
-  margin-top: 10px;
   position: relative;
-  border: 2px solid transparent;
-  background: rgba(0,0,0,0.45);
+  border: 1.6px solid transparent;
+  background: rgba(0,0,0,.32);
   backdrop-filter: blur(6px);
+  transform: translateY(8px);
 }
 
 #toggle-wrapper::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 12px;
-  padding: 2px;
+  border-radius: 10px;
+  padding: 1.8px;
   background: linear-gradient(135deg, var(--cyan), var(--purple));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
-  animation: rgb-flow 4s linear infinite;
+  animation: rgb-flow 3.8s linear infinite;
+  opacity: .85;
 }
 
 #toggle-role {
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
-  font-weight: 900;
-  letter-spacing: .5px;
-  transition: transform .2s ease;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  transition: color .2s ease, transform .2s ease;
 }
 
-/* glitch stays, but glow removed */
-.glitch-active {
-  animation: glitchEffect 0.38s linear;
+/* subtle glitch only when switching */
+.glitch-active { animation: glitchEffect .32s linear; }
+@keyframes glitchEffect {
+  0% { transform: skew(-3deg); color: var(--cyan);}
+  50% { transform: skew(3deg); color: var(--purple);}
+  100% { transform: skew(0deg); color: var(--cyan);}
 }
 
-/* coming soon — cleaner */
+/* coming soon */
 #coming-soon {
-  display: block;
-  text-align: center;
-  margin-top: 6px;
-  font-size: .75rem;
-  opacity: 0;
-  letter-spacing: 1.2px;
+  font-size: .68rem;
   color: #B15CFF;
-  transition: opacity .3s ease;
+  opacity: 0;
+  text-align: center;
+  margin-top: -2px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  transition: opacity .28s ease;
+}
+/* === NEURALFRAME-STYLE FOOTER === */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 7%;
+  border-top: 1px solid rgba(255,255,255,.15);
+  backdrop-filter: blur(6px);
+}
+
+.footer-left h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.4rem;
+  color: var(--cyan);
+}
+
+.footer-left p {
+  margin-top: 8px;
+  opacity: .75;
+  max-width: 350px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-icon {
+  color: white;
+  font-size: 1.2rem;
+  opacity: .7;
+  transition: .2s ease;
+}
+
+.footer-icon:hover {
+  opacity: 1;
+  transform: scale(1.15);
 }
