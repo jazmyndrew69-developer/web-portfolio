@@ -23,8 +23,9 @@ body{
 }
 
 /* Video background */
-.video-bg-wrap{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#020205}
-.video-bg{
+.video-bg-wrap{position:fixed;inset:0;z-index: -2;;overflow:hidden;pointer-events:none;background:#020205} /* push video behind everything */
+header, main, footer { position: relative;z-index: 10;
+}/* make sure content stays above video */
   position:absolute;top:50%;left:50%;
   width:auto;height:130%;min-width:130%;
   transform:translate(-50%,-50%);
@@ -82,7 +83,14 @@ body{
   font-family:Orbitron;font-weight:700;
   font-size:clamp(20px,4vw,36px);color:#fff;position:relative;
 }
-.role-sub{display:none;color:#bfc5d0;opacity:.85;font-size:.8rem}
+.role-sub {
+  color: #bfc5d0;
+  opacity: .75;
+  font-size: .7rem;
+  margin-top: 2px;
+  display: none;
+}
+
 .role.glitch ~ .electric-spark{animation:zap .9s linear}
 .electric-spark{position:absolute;right:-14px;top:8px;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle,#fff,rgba(255,255,255,.1));box-shadow:0 0 14px var(--cyan);opacity:0;transform:scale(.6)}
 @keyframes zap{0%{opacity:1;transform:scale(1);box-shadow:0 0 30px var(--cyan)}40%{opacity:1;transform:scale(.85);box-shadow:0 0 38px var(--purple)}100%{opacity:0;transform:scale(.4)}}

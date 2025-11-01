@@ -18,35 +18,30 @@
   const subEl  = document.getElementById('role-sub');
   const roleBox = document.querySelector('.role-box');
   if (roleEl && subEl) {
-    const DEV = 'Developer';
-    const DSG = 'Designer';
-    let showingDesigner = false;
+    const roleEl = document.getElementById('role');
+const roleSub = document.getElementById('role-sub');
 
-    function setRole(text, showSub) {
-      roleEl.textContent = text;
-      roleEl.setAttribute('data-text', text);
-      subEl.style.display = showSub ? 'block' : 'none';
-    }
-    function glitch() {
-      roleEl.classList.add('glitch');
-      setTimeout(() => roleEl.classList.remove('glitch'), 900);
-    }
+let roles = ["Developer", "Designer"];
+let idx = 0;
 
-    // initial
-    setRole(DEV, false);
+function toggleRole() {
+  idx = (idx + 1) % roles.length;
 
-    // auto cycle every 3.2s: brief Designer phase then revert
-    setInterval(() => {
-      showingDesigner = !showingDesigner;
-      if (showingDesigner) {
-        setRole(DSG, true); // show small (Coming soon)
-        glitch();
-        setTimeout(() => { setRole(DEV, false); glitch(); showingDesigner = false; }, 900);
-      } else {
-        setRole(DEV, false);
-        glitch();
-      }
-    }, 3200);
+  roleEl.textContent = roles[idx];
+  roleEl.dataset.text = roles[idx];
+
+  if (roles[idx] === "Designer") {
+    roleSub.style.display = "block";
+  } else {
+    roleSub.style.display = "none";
+  }
+
+  roleEl.classList.add("glitch");
+  setTimeout(() => roleEl.classList.remove("glitch"), 500);
+}
+
+setInterval(toggleRole, 3500);
+
 
     // Click preview (optional)
     roleBox && roleBox.addEventListener('click', () => {
